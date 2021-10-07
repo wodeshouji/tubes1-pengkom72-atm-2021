@@ -7,7 +7,7 @@ Tugas ini dibuat oleh
   <li>Matthew Mahendra/16521497</li>
   <li>Henry Anand Septian Radityo/16521...</li>
   <li>Richard Haris/16521...</li>
-  <li>Kenny Benaya Nathan</li>
+  <li>Kenny Benaya Nathan/16521...</li>
 </ol>
 
 ## Pre-defined variables
