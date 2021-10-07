@@ -28,7 +28,7 @@ print(" BANK MACAN ASIA ")
 pin = int(input("PLEASE ENTER YOUR IDENTIFICATION NUMBER: "))
 
 #Conditional untuk pin
-#Maksimum masukin pin 4 kali dengan 3 kali coba ulang. Lebih dari itu rekening diblokir
+#Maksimum masukin pin 3 kali dengan 2 kali coba ulang. Lebih dari itu rekening diblokir
 ulang = 0 #berapa kali salah
 
 while (ulang < 2):
