@@ -5,6 +5,8 @@ TUBES PENGKOM 2021
 <ol>
   <li>Detil kartu (pin, no rek, nama, saldo yang ada)</li>
   <li>Saldo yang ada di mesin ATM tsb</li>
+ </ol>
+ 
 ## Alur program
 <ol>
   <li>Masukkan Pin (Array akun sudah pre-defined)</li>
