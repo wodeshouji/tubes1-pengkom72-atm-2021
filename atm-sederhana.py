@@ -57,10 +57,11 @@ elif(status_masuk == 'berhasil'):
     print("    MENU ATM    ")
     
     #MENU ATM STARTS HERE
-
+    
     #Function cek saldo starts here
     def cek_saldo():
         saldo = kartu[3]
         print("Saldo Rekening Anda\n")
         print("====================\n")
         print("Rp", saldo)
+    #Function cek saldo ends here
