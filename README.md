@@ -5,7 +5,7 @@ TUBES PENGKOM 2021
 Tugas ini dibuat oleh
 <ol>
   <li>Matthew Mahendra/16521497</li>
-  <li>Henry Anand Septian Radityo/16521...</li>
+  <li>Henry Anand Septian Radityo/16521507</li>
   <li>Richard Haris/16521...</li>
   <li>Kenny Benaya Nathan/16521...</li>
 </ol>
