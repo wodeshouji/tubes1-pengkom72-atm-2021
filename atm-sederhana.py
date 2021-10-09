@@ -7,9 +7,9 @@ Dosen: Rizal Dwi Prayogo, S.Si., M.Si., M.Sc.
 
 Anggota Kelompok:
 1. Matthew Mahendra / 16521497
-2. Henry Anand Septian Radityo / 16521...
+2. Henry Anand Septian Radityo / 16521507
 3. Richard Haris / 16521...
-4. Kenny Benaya Nathan / 16521...
+4. Kenny Benaya Nathan / 16521527
 
 Deskripsi:  Program ATM-Sederhana dengan penyederhanaan yaitu hanya menggunakan 4 fungsi ATM yaitu transfer, tarik uang, cek saldo, 
             dan deposito
@@ -23,9 +23,11 @@ Dilengkapi seiring berjalan
 kartu = ["Rick Sanchez", 61869, 123456, 1000000]
 
 #Menu Tampilan Awal
-print(". : WELCOME : .")
+print("========================")
 print(" BANK MACAN ASIA ")
-pin = int(input("PLEASE ENTER YOUR IDENTIFICATION NUMBER: "))
+print(". : WELCOME : .")
+print("========================")
+pin = int(input("PLEASE ENTER YOUR PERSONAL IDENTIFICATION NUMBER: "))
 
 #Conditional untuk pin
 #Maksimum masukin pin 3 kali dengan 2 kali coba ulang. Lebih dari itu rekening diblokir
@@ -33,14 +35,14 @@ ulang = 0 #berapa kali salah
 
 while (ulang < 2):
     if(pin == kartu[2]):
-        print("Berhasil masuk")
+        #print("Berhasil masuk") #just for testing
         status_masuk = 'berhasil'
         ulang = 3
     elif(pin != kartu[2]):
         print("Incorrect PIN, please try again")
         status_masuk = 'gagal'
         ulang += 1
-        pin = int(input("PLEASE ENTER YOUR IDENTIFICATION NUMBER: "))
+        pin = int(input("PLEASE ENTER YOUR PERSONAL IDENTIFICATION NUMBER: "))
 
 #Cuci dosa terakhir
 if(ulang == 2):
@@ -55,13 +57,14 @@ if(status_masuk == 'gagal'):
 elif(status_masuk == 'berhasil'):
     print("\n=================")
     print("    MENU ATM    ")
+    print("=================\n")
     
     #MENU ATM STARTS HERE
     
     #Function cek saldo starts here
     def cek_saldo():
         saldo = kartu[3]
-        print("Saldo Rekening Anda\n")
-        print("====================\n")
+        print("Saldo Rekening Anda")
         print("Rp", saldo)
+        print("====================")
     #Function cek saldo ends here
