@@ -58,9 +58,17 @@ elif(status_masuk == 'berhasil'):
     print("\n=================")
     print("    MENU ATM    ")
     print("=================\n")
+        #Fuction list:
+    #Function transfer rekening starts here
     
-    #MENU ATM STARTS HERE
-    
+    #Fuction transfer rekening ends here
+
+    #Function deposito starts here
+
+    #Function deposito ends here
+
+    #Function cek saldo starts here
+
     #Function cek saldo starts here
     def cek_saldo():
         saldo = kartu[3]
@@ -68,3 +76,25 @@ elif(status_masuk == 'berhasil'):
         print("Rp", saldo)
         print("====================")
     #Function cek saldo ends here
+    
+    #MENU ATM STARTS HERE
+    menu = 0
+    while menu<1:
+        print("====================")
+        print("1. Cek Saldo")
+        print("2. Transfer")
+        print("3. Trading Simulation/Deposito")
+        print("4. Transaksi Selesai")
+        print("====================")
+        a = int(input("Pilih menu: "))
+        if (a==1):
+            cek_saldo()
+        elif (a==2):
+            transfer()
+        elif (a==3):
+            deposito()
+        elif (a==4):
+            menu +=1
+        else:
+            print("Masukkan menu yang sesuai (1-4)")
+    print("Transaksi selesai, Terima kasih!")
