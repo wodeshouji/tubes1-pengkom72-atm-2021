@@ -76,7 +76,7 @@ elif(status_masuk == 'berhasil'):
     def cek_saldo():
         saldo = kartu[3]
         print("Saldo Rekening Anda")
-        print("Rp", saldo)
+        print("Rp", saldo) #Ambil keterangan saldo
         print("====================")
     #Function cek saldo ends here
     
