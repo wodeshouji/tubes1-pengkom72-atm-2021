@@ -15,12 +15,15 @@ Deskripsi:  Program ATM-Sederhana dengan penyederhanaan yaitu hanya menggunakan 
             dan deposito
 
 Kamus:
-Dilengkapi seiring berjalan
 '''
 
 #Keterangan kartu sudah di pre-define lewat array di bawah ini
 #Format array: Nama, Nomor Rekening, PIN, Saldo Rekening
 kartu = ["Rick Sanchez", 61869, 123456, 1000000]
+
+#Saldo di ATM
+#Untuk tarik uang
+saldo_atm = 1000000
 
 #Menu Tampilan Awal
 print("========================")
