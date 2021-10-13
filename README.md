@@ -1,5 +1,5 @@
-# tubes1-pengkom72-atm-2021
-TUBES PENGKOM 2021
+# Tugas Besar 1 Pengenalan Komputasi 2021
+ITB 2021
 
 ## Anggota Kelompok
 Tugas ini dibuat oleh
