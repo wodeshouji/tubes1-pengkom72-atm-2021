@@ -30,13 +30,14 @@ print("========================")
 print(" BANK MACAN ASIA ")
 print(". : WELCOME : .")
 print("========================")
-pin = int(input("PLEASE ENTER YOUR PERSONAL IDENTIFICATION NUMBER: "))
+#pin = int(input("PLEASE ENTER YOUR PERSONAL IDENTIFICATION NUMBER: "))
 
 #Conditional untuk pin
 #Maksimum masukin pin 3 kali dengan 2 kali coba ulang. Lebih dari itu rekening diblokir
-ulang = 0 #berapa kali salah
+ulang = 0 #sudah mengulang beberapa kali
 
-while (ulang < 2):
+while (ulang < 3):
+    pin = int(input("PLEASE ENTER YOUR PERSONAL IDENTIFICATION NUMBER: "))
     if(pin == kartu[2]):
         #print("Berhasil masuk") #just for testing
         status_masuk = 'berhasil'
@@ -45,20 +46,26 @@ while (ulang < 2):
         print("Incorrect PIN, please try again")
         status_masuk = 'gagal'
         ulang += 1
-        pin = int(input("PLEASE ENTER YOUR PERSONAL IDENTIFICATION NUMBER: "))
-
-#Cuci dosa terakhir
-if(ulang == 2):
-    if(pin == kartu[2]):
-        status_masuk = 'berhasil'
-    else:
-        status_masuk = status_masuk
-
+        #pin = int(input("PLEASE ENTER YOUR PERSONAL IDENTIFICATION NUMBER: "))
             
 if(status_masuk == 'gagal'):
     print("Too many failed attempts. Your account has been suspended")
 elif(status_masuk == 'berhasil'):
     #Function list:
+    
+    #Exit sequence function: untuk exit atm setelah sebuah transaksi selesai tanpa harus kembali ke menu atm
+    def exit_sequence():
+        global menu
+        exit_confirm = 0
+        while exit_confirm < 1:
+            exit = input("Apakah Anda ingin membuat transaksi lain? (y/n) ")
+            if(exit == 'y'):
+                exit_confirm += 1
+            elif(exit == 'n'):
+                exit_confirm += 1
+                menu += 1
+            else:
+                print("Masukkan y/n")
 
     #Function transfer rekening starts here
     def transfer():
@@ -92,6 +99,9 @@ elif(status_masuk == 'berhasil'):
             else:
                 # biar ngulang jawabannya yang bener
                 print('Masukkan menu yang sesuai')
+        
+        #exit atm
+        exit_sequence()
     #Fuction transfer rekening ends here
 
     #Function deposito starts here
@@ -99,33 +109,51 @@ elif(status_masuk == 'berhasil'):
     #Function deposito ends here
 
     #Function cek saldo starts here
-
-    #Function cek saldo starts here
     def cek_saldo():
         saldo = kartu[3] #ambil saldo yang ada di kartu
         print("Saldo Rekening Anda")
         print("Rp", saldo) #Ambil keterangan saldo
         print("====================")
+
+        #exit transaksi
+        exit_sequence()
     #Function cek saldo ends here
     
     #Function tarik uang starts here
     def tarik_uang():
         global saldo_atm #saldo_atm adalah variabel global
+        konfirmasi = 0
         jmlh_uang = int(input("Masukkan jumlah uang yang akan Anda tarik: "))
+        print('====================')
+        print('Konfirmasi Transaksi') #konfirmasi akan menarik tunai sebesar jmlh_uang
+        print('====================')
+        print('    TARIK TUNAI     ')
+        print('Nomor Rekening: {}'.format(kartu[1]))
+        print("Saldo Anda akan berkurang sebesar Rp{} untuk ditarik secara tunai".format(jmlh_uang))
 
-        if(jmlh_uang > kartu[3] or jmlh_uang > saldo_atm): #Kalau saldo di ATM atau saldo di rekening tidak cukup print saldo tidak cukup (error)
-            print("Saldo tidak cukup")
-        else:
-            kartu[3] -= jmlh_uang #kurangi jumlah saldo di rekening dengan jumlah uang yang ditarik
-            saldo_atm -= jmlh_uang #kurangi jumlah saldo di atm dengan jumlah uang yang ditarik
-            print("Transaksi Anda sudah selesai")
-            #Variabel test
-            #print(saldo_atm)
-            #print(kartu[3])
-            print("====================")
+        while konfirmasi < 1:
+            confirm = input("Transaksi dilanjutkan?(y/n) ") #input konfirmasi apakah transaksi akan dilanjutkan atau tidak
+            if(jmlh_uang > kartu[3] or jmlh_uang > saldo_atm): #Kalau saldo di ATM atau saldo di rekening tidak cukup print saldo tidak cukup (error)
+                print("Saldo tidak cukup")
+            else:
+                if(confirm == 'y'):
+                    kartu[3] -= jmlh_uang #kurangi jumlah saldo di rekening dengan jumlah uang yang ditarik
+                    saldo_atm -= jmlh_uang #kurangi jumlah saldo di atm dengan jumlah uang yang ditarik
+                    print("Transaksi berhasil")
+                    print("Sisa saldo Anda Rp{}".format(kartu[3])) #berikan sisa saldo di rekening
+                    konfirmasi += 1 #terminasi
 
+                elif(confirm == 'n'):
+                    print("Transaksi dibatalkan")
+                    konfirmasi += 1 #terminasi
 
+                else:
+                    print("Masukkan y/n ")
+            
+        #exit transaksi tarik tunai
+        exit_sequence()
     #Function tarik uang ends here
+
     #MENU ATM STARTS HERE
     menu = 0
     while menu<1:
