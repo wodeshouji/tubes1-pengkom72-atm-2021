@@ -31,3 +31,6 @@ Tugas ini dibuat oleh
   <li>Tarik uang</li>
   <li>Deposito</li>
 </ol>
+
+## Laporan Tugas Besar
+Lihat di link: <a href="https://docs.google.com/document/d/1zc51I_SnXpbllI5QSqYmd1TqFp6hEp8uFX7SpmolA-M/edit?usp=sharing">https://docs.google.com/document/d/1zc51I_SnXpbllI5QSqYmd1TqFp6hEp8uFX7SpmolA-M/edit?usp=sharing</a>
