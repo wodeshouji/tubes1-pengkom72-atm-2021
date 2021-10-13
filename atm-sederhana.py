@@ -61,7 +61,37 @@ elif(status_masuk == 'berhasil'):
     #Function list:
 
     #Function transfer rekening starts here
-    
+    def transfer():
+        global saldo_atm
+        rek_transfer = int(input('Masukkan nomor rekening yang dituju: '))
+        nominal = int(input('Masukkan jumlah nominal uang yang akan ditransfer: '))
+        # layar konfirmasi
+        print('====================')
+        print('Konfirmasi Transaksi')
+        print('====================')
+        print('TRANSFER')
+        print('Nomor rekening   : ' + str(rek_transfer))
+        print('Jumlah           : Rp' + str(nominal))
+        print('Saldo anda akan berkurang dan berpindah ke rekening penerima')
+        konfirmasi = 0     # buat ngulang konfirmasi transfer klau ga valid
+        while konfirmasi < 1:
+            confirm = input('Transaksi dilanjutkan? (y/n): ')
+            if confirm == 'y':
+                print('====================')
+                # Kalau saldo di ATM atau saldo di rekening tidak cukup
+                if(nominal > kartu[3] or nominal > saldo_atm): 
+                    print("Saldo tidak cukup")
+                else:
+                    kartu[3] -= nominal     # kurangi jumlah saldo di rekening dengan jumlah uang yang ditransfer
+                    saldo_atm -= nominal    # kurangi jumlah saldo di atm dengan jumlah uang yang ditransfer
+                    print("Transaksi Anda sudah berhasil")
+                    print('Sisa saldo anda: Rp' + str(kartu[3]))
+                konfirmasi += 1 # biar selesai
+            elif confirm == 'n':
+                konfirmasi += 1
+            else:
+                # biar ngulang jawabannya yang bener
+                print('Masukkan menu yang sesuai')
     #Fuction transfer rekening ends here
 
     #Function deposito starts here
