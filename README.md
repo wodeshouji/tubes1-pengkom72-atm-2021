@@ -12,8 +12,8 @@ Tugas ini dibuat oleh
 
 ## Pre-defined variables
 <ol>
-  <li>Detil kartu (pin, no rek, nama, saldo yang ada) (array)</li>
-  <li>Saldo yang ada di mesin ATM tsb</li>
+  <li>Detil kartu (pin, no rek, nama, saldo yang ada) (array kartu)</li>
+  <li>Saldo yang ada di mesin ATM tsb (saldo_atm)</li>
  </ol>
  
 ## Alur program
