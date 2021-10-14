@@ -256,7 +256,7 @@ elif(status_masuk == 'berhasil'):
         print("1. Cek Saldo")
         print("2. Transfer")
         print("3. Deposito")
-        print("4. Tarik Uang")
+        print("4. Tarik Tunai")
         print("5. Transaksi Selesai")
         print("====================")
         a = int(input("Pilih menu: "))
@@ -272,4 +272,4 @@ elif(status_masuk == 'berhasil'):
             menu += 1
         else:
             print("Masukkan menu yang sesuai (1-4)")
-    print("Transaksi selesai, Terima kasih!")
+    print("Terima kasih telah menggunakan ATM ini. Jangan lupa untuk mengambil kartu Anda.")
