@@ -135,6 +135,7 @@ elif(status_masuk == 'berhasil'):
             confirm = input("Transaksi dilanjutkan?(y/n) ") #input konfirmasi apakah transaksi akan dilanjutkan atau tidak
             if(jmlh_uang > kartu[3] or jmlh_uang > saldo_atm): #Kalau saldo di ATM atau saldo di rekening tidak cukup print saldo tidak cukup (error)
                 print("Saldo tidak cukup")
+                konfirmasi += 1 #terminasi
             else:
                 if(confirm == 'y'):
                     kartu[3] -= jmlh_uang #kurangi jumlah saldo di rekening dengan jumlah uang yang ditarik
