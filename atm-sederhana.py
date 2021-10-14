@@ -163,7 +163,7 @@ elif(status_masuk == 'berhasil'):
         print("====================")
         print("1. Cek Saldo")
         print("2. Transfer")
-        print("3. Trading Simulation/Deposito")
+        print("3. Deposito")
         print("4. Tarik Tunai")
         print("5. Transaksi Selesai")
         print("====================")
